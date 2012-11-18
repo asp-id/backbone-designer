@@ -34,4 +34,32 @@ html, body {
   margin: 3px;
 }
 
+.show-grid {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.show-grid .grid-cell {
+  background-color: #EEEEEE;
+  border-radius: 3px 3px 3px 3px;
+  text-align: center;
+}
+
+.row-fluid [class*="span"] {
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.uneditable-input[class*="span"],
+.row-fluid input[class*="span"],
+.row-fluid select[class*="span"],
+.row-fluid textarea[class*="span"],
+.row-fluid .uneditable-input[class*="span"] {
+    float: left;
+    margin-left: 2.5641%;
+}
 
