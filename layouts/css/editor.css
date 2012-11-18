@@ -4,16 +4,20 @@
 }
 
 #files-container {
-  width: 280px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: #FAFAFA;
   background-image: linear-gradient(to right, #F8F8F8, #FFFFFF);
   background-repeat: repeat-x;
   border: 1px solid #D4D4D4;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.167);
+  bottom: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.17);
+  left: 0;
+  margin-bottom: 2px;
+  position: absolute;
+  top: 0;
+  width: 280px;
+  margin-left: 2px;
+  border: 1px solid #D4D4D4;
+  border-radius: 4px 4px 4px 4px; 
 }
 
 #files-container .container {

@@ -1,15 +1,18 @@
 #components-container {
-  width: 280px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  
   background-color: #FAFAFA;
   background-image: linear-gradient(to right, #FFFFFF, #F8F8F8);
   background-repeat: repeat-x;
   border: 1px solid #D4D4D4;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.167);
+  bottom: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.17);
+  right: 0;
+  margin-bottom: 2px;
+  position: absolute;
+  top: 0;
+  width: 280px;
+  margin-right: 2px;
+  border: 1px solid #D4D4D4;
+  border-radius: 4px 4px 4px 4px;   
 }
 
 #components-container .container {
@@ -33,5 +36,8 @@
   text-decoration: none;
   text-shadow: 0 1px 0 #FFFFFF;
   font-size: 12px;
+}
+
+#components-container .header span {
   padding-left: 10px;
 }
