@@ -1,0 +1,68 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#top-menu {
+  height: 38px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#main-container {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 38px;
+}
+
+#top-menu .navbar {
+  margin: 0;
+  padding: 2px;
+}
+
+#top-menu .navbar .nav > li > a {
+  padding: 6px 12px;
+}
+
+#top-menu .navbar-inner {
+  min-height: 32px;
+}
+
+#top-menu .navbar .btn, 
+#top-menu .navbar .btn-group {
+  margin: 3px;
+}
+
+.show-grid {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.show-grid .grid-cell {
+  background-color: #EEEEEE;
+  border-radius: 3px 3px 3px 3px;
+  text-align: center;
+}
+
+.row-fluid [class*="span"] {
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.uneditable-input[class*="span"],
+.row-fluid input[class*="span"],
+.row-fluid select[class*="span"],
+.row-fluid textarea[class*="span"],
+.row-fluid .uneditable-input[class*="span"] {
+    float: left;
+    margin-left: 2.5641%;
+}
+
