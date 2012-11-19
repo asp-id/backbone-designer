@@ -66,3 +66,12 @@ textarea[class*="span"],
     margin-left: 2.5641%;
 }
 
+.modal {
+  margin: -140px 0 0 -280px;
+}
+
+.modal-body, .modal-header, .modal-footer {
+  text-align: center;
+}
+
+
