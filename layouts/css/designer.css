@@ -1,4 +1,67 @@
-#designer-container {
-  height: 100%;
-  position: relative;
+/* 
+    Document   : designer
+    Created on : Nov 20, 2012, 9:18:07 PM
+    Author     : f0rk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#widgets-container {
+  height: 40%;
+}
+
+#properties-container {
+  height: 60%;
+}
+
+#designer-container #app-container .container {
+  width: 700px;
+}
+
+/* Widget icons*/
+
+.icon-widget {
+  background-image: url("../img/widget-icons.png");
+  height: 32px;
+  width: 32px;
+}
+
+.icon-widget-label {
+  background-position: 0 0;
+}
+
+.icon-widget-text-edit {
+  background-position: 0 -32px;
+}
+
+.icon-widget-text-area {
+  background-position: 0 -64px;
+}
+
+.icon-widget-select {
+  background-position: 0 -96px;
+}
+
+.icon-widget-radio-button {
+  background-position: 0 -160px;
+}
+
+.icon-widget-button {
+  background-position: 0 -128px;
+}
+
+/* Widget panel */
+
+.panel-element .icon-widget {
+  display: inline;
+  float: left;
+  margin-right: 8px;
+}
+
+#widgets-container .panel-element {
+  height: 32px;
+}
+
+#properties-container .panel-element .panel-label {
+  width: 46px;
 }

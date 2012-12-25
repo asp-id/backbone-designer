@@ -1,41 +1,37 @@
+/* 
+    Document   : main
+    Created on : Nov 20, 2012, 9:17:51 PM
+    Author     : f0rk
+    Description:
+        Common css styles.
+*/
+
 html, body {
   height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
-#top-menu {
-  height: 38px;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
+/* Toolbar */
+
+.toolbar {
+  margin: 2px;
 }
 
-#main-container {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 38px;
-}
-
-#top-menu .navbar {
-  margin: 0;
-  padding: 2px;
-}
-
-#top-menu .navbar .nav > li > a {
+.toolbar .navbar .nav > li > a {
   padding: 6px 12px;
 }
 
-#top-menu .navbar-inner {
+.toolbar .navbar-inner {
   min-height: 32px;
 }
 
-#top-menu .navbar .btn, 
-#top-menu .navbar .btn-group {
+.toolbar .navbar .btn, 
+.toolbar .navbar .btn-group {
   margin: 3px;
 }
+
+/* Grid */
 
 .show-grid {
   margin-bottom: 10px;
@@ -47,6 +43,8 @@ html, body {
   border-radius: 3px 3px 3px 3px;
   text-align: center;
 }
+
+/* TODO: switch to fixed row */
 
 .row-fluid [class*="span"] {
   overflow: hidden;
@@ -66,6 +64,88 @@ textarea[class*="span"],
     margin-left: 2.5641%;
 }
 
+/* Panel */
+
+.panel {
+  background-color: #FAFAFA;
+  background-repeat: repeat-x;
+  border: 1px solid #D4D4D4;
+  bottom: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.17);
+  margin-bottom: 2px;
+  position: absolute;
+  top: 0;
+  border: 1px solid #D4D4D4;
+  border-radius: 4px 4px 4px 4px;
+  font-size: 12px;
+}
+
+.panel-left {
+  background-image: linear-gradient(to left, #FFFFFF, #F8F8F8);
+  left: 0;
+  margin-left: 2px;
+  width: 280px;
+}
+
+.panel-right {
+  background-image: linear-gradient(to right, #FFFFFF, #F8F8F8);
+  right: 0;
+  margin-right: 2px;
+  width: 280px;
+}
+
+.panel-section {
+  position: relative;
+}
+
+.panel-header {
+  width: 100%;
+  height: 20px;
+  background-color: #E5E5E5;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125) inset;
+}
+
+.panel-content {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.panel-element {
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.panel-element:hover {
+  background-color: #f5f5f5;
+}
+
+.panel-header .panel-label {
+  padding-left: 10px;
+  color: #555555;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.panel-element .panel-label {
+  padding: 3px 0;
+  display: block;
+  float: left;
+  vertical-align: sub;
+}
+
+.panel-element input {
+  height: 14px;
+  margin-bottom: 0;
+  width: 150px;
+  font-size: 12px;
+}
+
+/* Modal */
+
 .modal {
   margin: -140px 0 0 -280px;
 }
@@ -73,5 +153,3 @@ textarea[class*="span"],
 .modal-body, .modal-header, .modal-footer {
   text-align: center;
 }
-
-
