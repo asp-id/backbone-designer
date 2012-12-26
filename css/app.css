@@ -1,8 +1,0 @@
-#app-container {
-  height: 100%;
-}
-
-#app-container .container,
-#app-container .navbar-static-top .container {
-  width: 700px;
-}

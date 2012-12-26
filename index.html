@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="css/layout.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
   <link href="css/designer.css" rel="stylesheet">
-  <link href="css/app.css" rel="stylesheet">
-  <link href="css/components.css" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -18,7 +17,7 @@
 </head>
 
 <body>
-  <div id="top-menu">
+  <div id="top-menu" class="toolbar">
     <div class="navbar">
       <div class="navbar-inner">
         <ul class="nav">
@@ -39,7 +38,7 @@
     <div id="designer-container">
       <div id="app-container">
         <div class="container"><h3 class="muted">Project name</h3></div>
-        
+
         <div class="container">
         
           <div class="row-fluid show-grid">
@@ -263,46 +262,46 @@
         </div>
       </div>
       
-      <div id="components-container">
-        <div id="widgets-container" class="container">
-          <div class="header"><span>widgets</span></div>
-          <div class="panel">
+      <div class="panel panel-right">
+        <div id="widgets-container" class="panel-section">
+          <div class="panel-header"><span class="panel-label">widgets</span></div>
+          <div class="panel-content">
             <div class="panel-element">
-              <i class="icon-widget icon-widget-label"></i><span>label</span>
+              <i class="icon-widget icon-widget-label"></i><span class="panel-label">label</span>
             </div>
             <div class="panel-element">
-              <i class="icon-widget icon-widget-text-edit"></i><span>textEdit</span>
+              <i class="icon-widget icon-widget-text-edit"></i><span class="panel-label">textEdit</span>
             </div>
             <div class="panel-element">
-              <i class="icon-widget icon-widget-text-area"></i><span>textArea</span>
+              <i class="icon-widget icon-widget-text-area"></i><span class="panel-label">textArea</span>
             </div>
             <div class="panel-element">
-              <i class="icon-widget icon-widget-select"></i><span>select</span>
+              <i class="icon-widget icon-widget-select"></i><span class="panel-label">select</span>
             </div>
             <div class="panel-element">
-              <i class="icon-widget icon-widget-radio-button"></i><span>radioButton</span>
+              <i class="icon-widget icon-widget-radio-button"></i><span class="panel-label">radioButton</span>
             </div>
             <div class="panel-element">
-              <i class="icon-widget icon-widget-button"></i><span>button</span>
+              <i class="icon-widget icon-widget-button"></i><span class="panel-label">button</span>
             </div>
           </div>
         </div>
-        <div id="properties-container" class="container">
-          <div class="header"><span>properties</span></div>
-          <div class="panel">
-            <div class="panel-element"><span>Name:</span><input type="text" value="nameEdit"></div>
-            <div class="panel-element"><span>Value:</span><input type="text" value="John Doe"></div>
-            <div class="panel-element"><span>Font:</span><input type="text" value="normal 12px Arial"></div>
-            <div class="panel-element"><span>Color:</span><input type="text" value="#F5F5F5"></div>
+        <div id="properties-container" class="panel-section">
+          <div class="panel-header"><span class="panel-label">properties</span></div>
+          <div class="panel-content">
+            <div class="panel-element"><span class="panel-label">Name:</span><input type="text" value="nameEdit"></div>
+            <div class="panel-element"><span class="panel-label">Value:</span><input type="text" value="John Doe"></div>
+            <div class="panel-element"><span class="panel-label">Font:</span><input type="text" value="normal 12px Arial"></div>
+            <div class="panel-element"><span class="panel-label">Color:</span><input type="text" value="#F5F5F5"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
   
-  <div id="new" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true">
+  <div id="new-project-modal" class="modal hide fade" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-header">
-      <h3 id="myModalLabel">Backbone.Designer</h3>
+      <h3>Backbone.Designer</h3>
     </div>
     <div class="modal-body">
       <p>Welcome to Backbone Designer!</p>
@@ -310,7 +309,7 @@
       <input type="text" value="hello-world">
     </div>
     <div class="modal-footer">
-      <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">start new project</button>
+      <button class="btn btn-success" data-dismiss="modal">start new project</button>
     </div>
   </div>
   
