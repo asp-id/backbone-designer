@@ -11,7 +11,6 @@ require.config({
     , backbone: 'vendor/backbone/backbone'
     , text: 'vendor/require/text'
   }
-
   , shim: {
       'underscore': { exports: '_' }
     , 'backbone': {

@@ -6,7 +6,7 @@
 
 require.config({
     baseUrl: './'
-  , urlArgs: Math.random()
+  , urlArgs: Math.random() // to prevent caching
   , paths: {
       jquery: 'vendor/jquery/jquery-1.8.3'
     , underscore: 'vendor/underscore/underscore'
@@ -40,6 +40,7 @@ require(['underscore', 'jquery', 'jasmine-html'], function (_, $, jasmine) {
     return htmlReporter.specFilter(spec)
   }
 
+  // load the specs we are going to run
   specs.push('test/router')
 
   $(function () {
