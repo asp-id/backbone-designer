@@ -14,6 +14,8 @@ To build the app:
 make build
 ```
 
+To run test suite open <code>app/test.html</code> in your browser.
+
 ### Dependencies
 
 * Backbone.js 0.9.9
@@ -23,3 +25,4 @@ make build
 * jQuery 1.8.3
 * CodeMirror 2.35
 * Twitter Bootstrap 2.2.1
+* Jasmine 1.3.1
