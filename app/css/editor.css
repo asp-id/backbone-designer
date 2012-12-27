@@ -1,0 +1,49 @@
+/* 
+    Document   : editor
+    Created on : Nov 20, 2012, 9:18:14 PM
+    Author     : f0rk
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#text-editor-container {
+  bottom: 0;
+  left: 283px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  margin-left: 6px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#editor-textarea {
+  bottom: 0;
+  height: 100%;
+  margin-right: 2px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 99%;
+}
+.CodeMirror {
+  bottom: 0;
+  font-family: monospace;
+  font-size: 12px;
+  left: 0;
+  line-height: 1em;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+.CodeMirror-scroll {
+  bottom: 0;
+  outline: medium none;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: inherit;
+}

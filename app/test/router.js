@@ -22,7 +22,35 @@ describe('Router', function () {
   it('should have "routes" hash', function () {
     expect(this.router.routes).toBeDefined()
   })
+
   it('should have "initialize" method', function () {
     expect(typeof this.router.initialize).toBe('function')
+  })
+
+  it('should have "" route', function () {
+    expect(this.router.routes['']).toBeDefined()
+  })
+
+  it('should call "designer" action for "" route', function () {
+    expect(this.router.routes['']).toEqual('designer')
+    expect(typeof this.router.designer).toBe('function')
+  })
+
+  it('should have "editor" route', function () {
+    expect(this.router.routes['editor']).toBeDefined()
+  })
+
+  it('should call "editor" action for "editor" route', function () {
+    expect(this.router.routes['editor']).toEqual('editor')
+    expect(typeof this.router.editor).toBe('function')
+  })
+
+  it('should have "preview" route', function () {
+    expect(this.router.routes['preview']).toBeDefined()
+  })
+
+  it('should call "preview" action for "preview" route', function () {
+    expect(this.router.routes['preview']).toEqual('preview')
+    expect(typeof this.router.preview).toBe('function')
   })
 })

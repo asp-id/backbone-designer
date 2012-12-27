@@ -6,10 +6,26 @@
 
 define(['backbone'], function (Backbone) {
   var Router = Backbone.Router.extend({
-      routes: { '': 'home' }
+      routes: {
+          '': 'designer'
+        , 'editor': 'editor'
+        , 'preview': 'preview'
+      }
 
     , initialize: function () {
       console.log('init router')
+    }
+
+    , designer: function () {
+      console.log('designer action')
+    }
+
+    , editor: function () {
+      console.log('editor action')
+    }
+
+    , preview: function () {
+      console.log('preview action')
     }
   })
 
