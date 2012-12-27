@@ -40,11 +40,11 @@ require(['underscore', 'jquery', 'jasmine-html'], function (_, $, jasmine) {
     return htmlReporter.specFilter(spec)
   }
 
-  specs.push('test/router');
+  specs.push('test/router')
 
   $(function () {
     require(specs, function () {
-      jasmineEnv.execute();
+      jasmineEnv.execute()
     })
   })
 })
