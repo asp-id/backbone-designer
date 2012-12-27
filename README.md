@@ -2,6 +2,18 @@
 
 This is a RAD tool for creating backbone based applications
 
+### Installation
+
+```
+git clone git://github.com/DavidKlassen/backbone-designer.git
+```
+
+To build the app:
+
+```
+make build
+```
+
 ### Dependencies
 
 * Backbone.js 0.9.9
