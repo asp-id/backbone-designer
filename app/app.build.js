@@ -7,12 +7,7 @@
 ({
     baseUrl : './'
   , dir : '../build'
-  , paths: {
-      jquery: 'vendor/jquery/jquery-1.8.3'
-    , underscore: 'vendor/underscore/underscore'
-    , backbone: 'vendor/backbone/backbone'
-    , text: 'vendor/require/text'
-  }
+  , mainConfigFile: 'main.js'
   , optimize: 'uglify'
   , modules: [
     {
@@ -20,4 +15,5 @@
       , exclude: ['jquery', 'underscore', 'backbone', 'text']
     }
   ]
+  , fileExclusionRegExp: /^(\.)|(test)|(app\.build\.js)|(test\.js)|(test\.html)|(jasmine)/
 })
