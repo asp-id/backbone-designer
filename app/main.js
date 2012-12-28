@@ -20,6 +20,25 @@ require.config({
   }
 })
 
-require(['backbone', 'router'], function (Backbone) {
-  Backbone.history.start()
+require(['jquery', 'backbone', 'router'], function ($, Backbone, router) {
+  $(function () {
+    // Globally capture clicks. If they are internal,
+    // route them through Backbone's navigate method.
+    $(document).on('click', 'a', function (e) {
+      url = $(e.currentTarget).attr('href')
+
+      // Allow shift+click for new tabs, etc.
+      if (!e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+        e.preventDefault()
+      }
+
+      // Instruct Backbone to trigger routing events
+      router.navigate(url, { trigger: true })
+
+      return false
+    })
+
+    // Start the routing and load the default route
+    Backbone.history.start({ pushState: true })
+  })
 })
