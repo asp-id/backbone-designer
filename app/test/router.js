@@ -11,12 +11,28 @@ describe('Router', function () {
 
     require(['router'], function (router) {
       self.router = router
+      Backbone.history.start({ silent: true })
+
+      // change hash to be sure that hashChange is
+      // triggered when other navigate calls are made
+      self.router.navigate('foo')
+
+      // Backbone stores route callbacks in
+      // Backbone.history.handlers array and
+      // we have to clear it and rebind routes
+      // every time we want to spy on route handler
+      Backbone.history.handlers = []
+
       done = true
     })
 
     waitsFor(function () {
       return done
     })
+  })
+
+  afterEach(function () {
+    Backbone.history.stop()
   })
 
   it('should have "routes" hash', function () {
@@ -27,30 +43,48 @@ describe('Router', function () {
     expect(typeof this.router.initialize).toBe('function')
   })
 
-  it('should have "" route', function () {
-    expect(this.router.routes['']).toBeDefined()
+  describe('"" (root) route', function () {
+    it('should call "designer" action', function () {
+      var spy = spyOn(this.router, 'designer')
+      this.router._bindRoutes()
+      this.router.navigate('', { trigger: true })
+      expect(spy).toHaveBeenCalled()
+    })
   })
 
-  it('should call "designer" action for "" route', function () {
-    expect(this.router.routes['']).toEqual('designer')
-    expect(typeof this.router.designer).toBe('function')
+  describe('"editor" route', function () {
+    it('should call "editor" action', function () {
+      var spy = spyOn(this.router, 'editor')
+      this.router._bindRoutes()
+      this.router.navigate('editor', { trigger: true })
+      expect(spy).toHaveBeenCalled()
+    })
   })
 
-  it('should have "editor" route', function () {
-    expect(this.router.routes['editor']).toBeDefined()
+  describe('"preview" route', function () {
+    it('should call "preview" action', function () {
+      var spy = spyOn(this.router, 'preview')
+      this.router._bindRoutes()
+      this.router.navigate('preview', { trigger: true })
+      expect(spy).toHaveBeenCalled()
+    })
   })
 
-  it('should call "editor" action for "editor" route', function () {
-    expect(this.router.routes['editor']).toEqual('editor')
-    expect(typeof this.router.editor).toBe('function')
-  })
+  describe('"notfound" action', function () {
+    it('should be called for any undefined route', function () {
+      var spy = spyOn(this.router, 'notfound')
+      this.router._bindRoutes()
+      this.router.navigate('nonexistentroute', { trigger: true })
+      expect(spy.calls.length).toEqual(1)
+      this.router.navigate('nonexistentroute2', { trigger: true })
+      expect(spy.calls.length).toEqual(2)
+    })
 
-  it('should have "preview" route', function () {
-    expect(this.router.routes['preview']).toBeDefined()
-  })
-
-  it('should call "preview" action for "preview" route', function () {
-    expect(this.router.routes['preview']).toEqual('preview')
-    expect(typeof this.router.preview).toBe('function')
+    it('should not be called for defined routes', function () {
+      var spy = spyOn(this.router, 'notfound')
+      this.router._bindRoutes()
+      this.router.navigate('', { trigger: true })
+      expect(spy.calls.length).toEqual(0)
+    })
   })
 })

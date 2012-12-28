@@ -10,8 +10,12 @@ define(['backbone'], function (Backbone) {
           '': 'designer'
         , 'editor': 'editor'
         , 'preview': 'preview'
+        , '*route': 'notfound'
       }
 
+    /**
+     * Bootstraps the router
+     */
     , initialize: function () {
       console.log('init router')
     }
@@ -26,6 +30,10 @@ define(['backbone'], function (Backbone) {
 
     , preview: function () {
       console.log('preview action')
+    }
+
+    , notfound: function (route) {
+      console.log('route "' + route + '" not found')
     }
   })
 
