@@ -27,8 +27,4 @@ describe('ScreenView', function () {
   afterEach(function () {
     this.screenView.remove()
   })
-
-  it('should have have the right DOM element', function () {
-    expect(this.screenView.$el.attr('id')).toEqual(this.screenId)
-  })
 })
