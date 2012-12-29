@@ -65,6 +65,10 @@ describe('Router', function () {
     expect(this.router.previewScreen).toBeDefined()
   })
 
+  it('should have navigation menu', function () {
+    expect(this.router.navigationMenu).toBeDefined()
+  })
+
   describe('"designer" action', function () {
     it('should be called for "" route', function () {
       var spy = spyOnAction(this.router, 'designer')

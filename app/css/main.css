@@ -20,6 +20,7 @@ html, body {
 
 .toolbar .navbar .nav > li > a {
   padding: 6px 12px;
+  outline: none;
 }
 
 .toolbar .navbar-inner {

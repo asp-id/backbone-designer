@@ -5,11 +5,15 @@
  */
 
 define([
-    'backbone'
+    'jquery'
+  , 'backbone'
+  , 'views/NavigationView'
   , 'views/DesignerView'
   , 'views/EditorView'
   , 'views/PreviewView'
-], function (Backbone
+], function ($
+           , Backbone
+           , NavigationView
            , DesignerView
            , EditorView
            , PreviewView) {
@@ -28,6 +32,10 @@ define([
      * Bootstraps the router
      */
     , initialize: function () {
+      // render navigation menu
+      this.navigationMenu = new NavigationView({ router: this })
+      $('body').prepend(this.navigationMenu .render().el)
+
       // create screen views
       this.designerScreen = new DesignerView({ id: 'designer-screen' })
       this.editorScreen = new EditorView({ id: 'editor-screen' })
