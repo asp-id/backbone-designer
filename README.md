@@ -16,6 +16,14 @@ make build
 
 To run test suite open <code>app/test.html</code> in your browser.
 
+To run the web server (node.js):
+
+```
+make run
+```
+
+Application will be available at http://localhost:3000
+
 ### Dependencies
 
 * Backbone.js 0.9.9
