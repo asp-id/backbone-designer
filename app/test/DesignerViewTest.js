@@ -10,7 +10,7 @@ describe('DesignerView', function () {
       , done = false
 
     require(['views/DesignerView'], function (DesignerView) {
-      self.designerView = new DesignerView({ name: 'designer' })
+      self.designerView = new DesignerView()
 
       $('#sandbox').html(self.designerView.render().el)
 

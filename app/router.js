@@ -5,9 +5,14 @@
  */
 
 define([
-  'backbone',
-  'views/DesignerView'
-], function (Backbone, DesignerView) {
+    'backbone'
+  , 'views/DesignerView'
+  , 'views/EditorView'
+  , 'views/PreviewView'
+], function (Backbone
+           , DesignerView
+           , EditorView
+           , PreviewView) {
   var Router = Backbone.Router.extend({
     // DOM element to contain screen views
       container: '#main-container'
@@ -23,7 +28,10 @@ define([
      * Bootstraps the router
      */
     , initialize: function () {
+      // create screen views
       this.designerScreen = new DesignerView({ id: 'designer-screen' })
+      this.editorScreen = new EditorView({ id: 'editor-screen' })
+      this.previewScreen = new PreviewView({ id: 'preview-screen' })
     }
 
     , designer: function () {
@@ -31,11 +39,11 @@ define([
     }
 
     , editor: function () {
-      console.log('editor action')
+      $(this.container).html(this.editorScreen.render().el)
     }
 
     , preview: function () {
-      console.log('preview action')
+      $(this.container).html(this.previewScreen.render().el)
     }
 
     , notfound: function (route) {

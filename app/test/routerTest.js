@@ -57,6 +57,14 @@ describe('Router', function () {
     expect(this.router.designerScreen).toBeDefined()
   })
 
+  it('should have "editor" screen', function () {
+    expect(this.router.editorScreen).toBeDefined()
+  })
+
+  it('should have "preview" screen', function () {
+    expect(this.router.previewScreen).toBeDefined()
+  })
+
   describe('"designer" action', function () {
     it('should be called for "" route', function () {
       var spy = spyOnAction(this.router, 'designer')
@@ -77,12 +85,24 @@ describe('Router', function () {
       this.router.navigate('editor', { trigger: true })
       expect(spy).toHaveBeenCalled()
     })
+
+    it('should render editorScreen', function () {
+      var spy = spyOn(this.router.editorScreen, 'render').andCallThrough()
+      this.router.editor()
+      expect(spy).toHaveBeenCalled()
+    })
   })
 
   describe('"preview" action', function () {
     it('should be called for "preview" route', function () {
       var spy = spyOnAction(this.router, 'preview')
       this.router.navigate('preview', { trigger: true })
+      expect(spy).toHaveBeenCalled()
+    })
+
+    it('should render previewScreen', function () {
+      var spy = spyOn(this.router.previewScreen, 'render').andCallThrough()
+      this.router.preview()
       expect(spy).toHaveBeenCalled()
     })
   })
