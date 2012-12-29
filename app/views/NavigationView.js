@@ -24,15 +24,9 @@ define([
       this.template = template
 
       // activate menu items on route match event
-      this.router.on('route:designer', function () {
-        this._activate('designer')
-      }, this)
-      this.router.on('route:editor', function () {
-        this._activate('editor')
-      }, this)
-      this.router.on('route:preview', function () {
-        this._activate('preview')
-      }, this)
+      this.router.on('route:designer', function () { this._activate('designer') }, this)
+      this.router.on('route:editor', function () { this._activate('editor') }, this)
+      this.router.on('route:preview', function () { this._activate('preview') }, this)
 
       // set current active item to null
       this.activeItem = null
