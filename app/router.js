@@ -4,24 +4,30 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define(['backbone'], function (Backbone) {
+define([
+  'backbone',
+  'views/DesignerView'
+], function (Backbone, DesignerView) {
   var Router = Backbone.Router.extend({
-      routes: {
-          '': 'designer'
-        , 'editor': 'editor'
-        , 'preview': 'preview'
-        , '*route': 'notfound'
-      }
+    // DOM element to contain screen views
+      container: '#main-container'
+
+    , routes: {
+        '': 'designer'
+      , 'editor': 'editor'
+      , 'preview': 'preview'
+      , '*route': 'notfound'
+    }
 
     /**
      * Bootstraps the router
      */
     , initialize: function () {
-      console.log('init router')
+      this.designerScreen = new DesignerView({ id: 'designer-screen' })
     }
 
     , designer: function () {
-      console.log('designer action')
+      $(this.container).html(this.designerScreen.render().el)
     }
 
     , editor: function () {

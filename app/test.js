@@ -42,6 +42,7 @@ require(['underscore', 'jquery', 'jasmine-html'], function (_, $, jasmine) {
 
   // load the specs we are going to run
   specs.push('test/routerTest')
+  specs.push('test/ScreenViewTest')
 
   $(function () {
     require(specs, function () {

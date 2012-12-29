@@ -49,28 +49,38 @@ describe('Router', function () {
     expect(this.router.routes).toBeDefined()
   })
 
-  it('should have "initialize" method', function () {
-    expect(typeof this.router.initialize).toBe('function')
+  it('should have the "container" selector', function () {
+    expect(this.router.container).toBeDefined()
   })
 
-  describe('"" (root) route', function () {
-    it('should call "designer" action', function () {
+  it('should have "designer" screen', function () {
+    expect(this.router.designerScreen).toBeDefined()
+  })
+
+  describe('"designer" action', function () {
+    it('should be called for "" route', function () {
       var spy = spyOnAction(this.router, 'designer')
       this.router.navigate('', { trigger: true })
       expect(spy).toHaveBeenCalled()
     })
+
+    it('should render designerScreen', function () {
+      var spy = spyOn(this.router.designerScreen, 'render').andCallThrough()
+      this.router.designer()
+      expect(spy).toHaveBeenCalled()
+    })
   })
 
-  describe('"editor" route', function () {
-    it('should call "editor" action', function () {
+  describe('"editor" action', function () {
+    it('should be called for "editor" route', function () {
       var spy = spyOnAction(this.router, 'editor')
       this.router.navigate('editor', { trigger: true })
       expect(spy).toHaveBeenCalled()
     })
   })
 
-  describe('"preview" route', function () {
-    it('should call "preview" action', function () {
+  describe('"preview" action', function () {
+    it('should be called for "preview" route', function () {
       var spy = spyOnAction(this.router, 'preview')
       this.router.navigate('preview', { trigger: true })
       expect(spy).toHaveBeenCalled()
