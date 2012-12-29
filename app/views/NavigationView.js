@@ -4,10 +4,7 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define([
-    'backbone'
-  , 'text!templates/navigationView.html'
-], function (Backbone, template) {
+define(['backbone', 'text!templates/navigationView.html'], function (Backbone, template) {
   var NavigationView = Backbone.View.extend({
       id: 'top-menu'
 
@@ -16,8 +13,7 @@ define([
     /**
      * Navigation view initializer
      *
-     * @param {Object} options Expects options to
-     * contain router object
+     * @param {Object} options Expects options to  contain router object
      */
     , initialize: function (options) {
       this.router = options.router

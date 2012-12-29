@@ -19,16 +19,13 @@ describe('NavigationView', function () {
 
       Backbone.history.start({ silent: true })
 
-      // change hash to be sure that hashChange is
-      // triggered when other navigate calls are made
+      // change hash to be sure that hashChange is triggered when other navigate calls are made
       self.router.navigate('foo')
 
       done = true
     })
 
-    waitsFor(function () {
-      return done
-    })
+    waitsFor(function () { return done })
   })
 
   afterEach(function () {

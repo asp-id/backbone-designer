@@ -11,18 +11,13 @@ describe('PreviewView', function () {
 
     require(['views/PreviewView'], function (PreviewView) {
       self.previewView = new PreviewView()
-
       $('#sandbox').html(self.previewView.render().el)
 
       done = true
     })
 
-    waitsFor(function () {
-      return done
-    })
+    waitsFor(function () { return done })
   })
 
-  afterEach(function () {
-    this.previewView.remove()
-  })
+  afterEach(function () { this.previewView.remove() })
 })

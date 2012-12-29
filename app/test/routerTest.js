@@ -5,15 +5,13 @@
  */
 
 /**
- * Helper function that rebinds routes and
- * returns a spy for given route.
+ * Helper function that rebinds routes and returns a spy for given route.
  */
 function spyOnAction(router, action) {
   var spy = spyOn(router, action)
 
-  // Backbone stores route callbacks in Backbone.history.handlers
-  // so we have to clear them and rebind routes every time we want
-  // to spy on route handler.
+  // Backbone stores route callbacks in Backbone.history.handlers  so we
+  // have to clear them and rebind routes every time we want  to spy on route handler.
   Backbone.history.handlers = []
   router._bindRoutes()
 
@@ -29,21 +27,16 @@ describe('Router', function () {
       self.router = router
       Backbone.history.start({ silent: true })
 
-      // change hash to be sure that hashChange is
-      // triggered when other navigate calls are made
+      // change hash to be sure that hashChange is triggered when other navigate calls are made
       self.router.navigate('foo')
 
       done = true
     })
 
-    waitsFor(function () {
-      return done
-    })
+    waitsFor(function () { return done })
   })
 
-  afterEach(function () {
-    Backbone.history.stop()
-  })
+  afterEach(function () { Backbone.history.stop() })
 
   it('should have "routes" hash', function () {
     expect(this.router.routes).toBeDefined()

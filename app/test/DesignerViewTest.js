@@ -11,18 +11,13 @@ describe('DesignerView', function () {
 
     require(['views/DesignerView'], function (DesignerView) {
       self.designerView = new DesignerView()
-
       $('#sandbox').html(self.designerView.render().el)
 
       done = true
     })
 
-    waitsFor(function () {
-      return done
-    })
+    waitsFor(function () { return done })
   })
 
-  afterEach(function () {
-    this.designerView.remove()
-  })
+  afterEach(function () { this.designerView.remove() })
 })

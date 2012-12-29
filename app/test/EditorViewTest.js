@@ -11,18 +11,13 @@ describe('EditorView', function () {
 
     require(['views/EditorView'], function (EditorView) {
       self.editorView = new EditorView()
-
       $('#sandbox').html(self.editorView.render().el)
 
       done = true
     })
 
-    waitsFor(function () {
-      return done
-    })
+    waitsFor(function () { return done })
   })
 
-  afterEach(function () {
-    this.editorView.remove()
-  })
+  afterEach(function () { this.editorView.remove() })
 })

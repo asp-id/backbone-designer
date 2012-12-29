@@ -11,12 +11,7 @@ define([
   , 'views/DesignerView'
   , 'views/EditorView'
   , 'views/PreviewView'
-], function ($
-           , Backbone
-           , NavigationView
-           , DesignerView
-           , EditorView
-           , PreviewView) {
+], function ($, Backbone, NavigationView, DesignerView, EditorView, PreviewView) {
   var Router = Backbone.Router.extend({
     // DOM element to contain screen views
       container: '#main-container'

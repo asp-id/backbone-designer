@@ -1,6 +1,5 @@
 /**
- * Screen View. All application screens should
- * inherit from this view
+ * Screen View. All application screens should  inherit from this view
  *
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
