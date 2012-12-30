@@ -4,8 +4,8 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define(['backbone'], function (Backbone) {
-  var ScreenView = Backbone.View.extend({ })
+define(['views/ContainerView'], function (ContainerView) {
+  var ScreenView = ContainerView.extend({ })
 
   return ScreenView
 })
