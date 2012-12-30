@@ -41,7 +41,6 @@ describe('PanelView', function () {
     var position = { top: 10, left: 10 }
     this.panelView.initialize({ position: position })
     this.panelView.render()
-    console.log(this.panelView.$el.position(), position)
     expect(_.isEqual(this.panelView.$el.position(), position)).toBeTruthy()
   })
 
