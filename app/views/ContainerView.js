@@ -6,9 +6,10 @@
 
 define(['underscore', 'backbone'], function (_, Backbone) {
   var ContainerView = Backbone.View.extend({
-    // Holds the embedded views
-      content: []
-
+      initialize: function () {
+      // Holds the embedded views
+      this.content = []
+    }
     /**
      * Renders all the content
      *

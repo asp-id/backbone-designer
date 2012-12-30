@@ -20,4 +20,8 @@ describe('DesignerView', function () {
   })
 
   afterEach(function () { this.designerView.remove() })
+
+  it('should contain widgets panel', function () {
+    expect(this.designerView.widgetsPanel).toBeDefined()
+  })
 })

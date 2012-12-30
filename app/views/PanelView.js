@@ -25,8 +25,8 @@ define(['underscore', 'views/ContainerView'], function (_, ContainerView) {
       options = options || {}
 
       this.position = options.position || { top: 0, left: 0 }
-      this.width = options.width || '100%'
-      this.height = options.height || '100%'
+      this.width = options.width || 'auto'
+      this.height = options.height || 'auto'
       this.background = options.background || null
     }
 
