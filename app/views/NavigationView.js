@@ -13,7 +13,7 @@ define(['backbone', 'text!templates/navigationView.html'], function (Backbone, t
     /**
      * Navigation view initializer
      *
-     * @param {Object} options Expects options to  contain router object
+     * @param {Object} options Expects options to contain router object
      */
     , initialize: function (options) {
       this.router = options.router
@@ -29,7 +29,7 @@ define(['backbone', 'text!templates/navigationView.html'], function (Backbone, t
     }
 
     , render: function () {
-      this.$el.html(template)
+      this.$el.html(this.template)
 
       return this
     }
