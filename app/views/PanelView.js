@@ -4,7 +4,7 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define(['views/ContainerView'], function (ContainerView) {
+define(['underscore', 'views/ContainerView'], function (_, ContainerView) {
   var PanelView = ContainerView.extend({
       className: 'panel'
 
@@ -28,6 +28,17 @@ define(['views/ContainerView'], function (ContainerView) {
       this.width = options.width || '100%'
       this.height = options.height || '100%'
       this.background = options.background || null
+    }
+
+    , render: function () {
+      this.$el.css(_.extend({
+          width: this.width
+        , height: this.height
+        , 'background-image': this.background
+        , position: 'absolute' // position should be absolute to work without css file
+      }, this.position))
+
+      return PanelView.__super__.render.apply(this, arguments)
     }
   })
 

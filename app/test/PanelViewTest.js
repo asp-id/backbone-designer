@@ -36,4 +36,33 @@ describe('PanelView', function () {
   it('should have background', function () {
     expect(this.panelView.background).toBeDefined()
   })
+
+  it('should render the right position', function () {
+    var position = { top: 10, left: 10 }
+    this.panelView.initialize({ position: position })
+    this.panelView.render()
+    console.log(this.panelView.$el.position(), position)
+    expect(_.isEqual(this.panelView.$el.position(), position)).toBeTruthy()
+  })
+
+  it('should render the right width', function () {
+    var width = 100
+    this.panelView.initialize({ width: width })
+    this.panelView.render()
+    expect(this.panelView.$el.width()).toEqual(width)
+  })
+
+  it('should render the right height', function () {
+    var height = 100
+    this.panelView.initialize({ height: height })
+    this.panelView.render()
+    expect(this.panelView.$el.height()).toEqual(height)
+  })
+
+  it('should render the right background', function () {
+    var background = 'linear-gradient(to right, rgb(255, 255, 255), rgb(248, 248, 248))'
+    this.panelView.initialize({ background: background })
+    this.panelView.render()
+    expect(this.panelView.$el.css('background-image')).toEqual(background)
+  })
 })
