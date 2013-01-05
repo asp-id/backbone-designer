@@ -20,4 +20,8 @@ describe('EditorView', function () {
   })
 
   afterEach(function () { this.editorView.remove() })
+
+  it('should contain project panel', function () {
+    expect(this.editorView.projectPanel).toBeDefined()
+  })
 })
