@@ -10,7 +10,7 @@ define(['views/ScreenView', 'views/PanelView'], function (ScreenView, PanelView)
       DesignerView.__super__.initialize.apply(this, arguments)
 
       this.widgetsPanel = new PanelView({
-          position: { top: 0, right: 2, bottom: 0 }
+          position: { top: 0, right: 0, bottom: 0 }
         , width: 280
         , background: 'linear-gradient(to right, #FFFFFF, #F8F8F8)'
       })

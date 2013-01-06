@@ -10,7 +10,7 @@ define(['views/ScreenView', 'views/PanelView'], function (ScreenView, PanelView)
       EditorView.__super__.initialize.apply(this, arguments)
 
       this.projectPanel =  new PanelView({
-          position: { top: 0, left: 2, bottom: 0 }
+          position: { top: 0, left: 0, bottom: 0 }
         , width: 280
         , background: 'linear-gradient(to left, #FFFFFF, #F8F8F8)'
       })
