@@ -24,4 +24,8 @@ describe('EditorView', function () {
   it('should contain project panel', function () {
     expect(this.editorView.projectPanel).toBeDefined()
   })
+
+  it('should contain editor panel', function () {
+    expent(this.editorView.editorPanel).toBeDefined()
+  })
 })
