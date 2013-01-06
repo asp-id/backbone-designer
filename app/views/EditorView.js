@@ -18,8 +18,7 @@ define(['views/ScreenView', 'views/PanelView'], function (ScreenView, PanelView)
           position: { top: 0, left: 286, bottom: 0, right: 0 }
       })
 
-      this.addContent(this.projectPanel)
-      this.addContent(this.editorPanel)
+      this.addContent([this.projectPanel, this.editorPanel])
     }
   })
 

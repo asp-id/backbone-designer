@@ -26,10 +26,10 @@ define(['underscore', 'backbone'], function (_, Backbone) {
     /**
      * Adds content to the view
      *
-     * @param {Backbone.View} item
+     * @param {Backbone.View|Array} item Backbone view, or array of views
      */
     , addContent: function (item) {
-      this.content.push(item)
+      this.content = this.content.concat(item)
     }
   })
 
