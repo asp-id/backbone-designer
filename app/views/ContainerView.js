@@ -4,11 +4,16 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define(['underscore', 'views/BaseView'], function (_, BaseView) {
+define(['jquery', 'underscore', 'views/BaseView'], function ($, _, BaseView) {
   var ContainerView = BaseView.extend({
-      initialize: function () {
+      initialize: function (options) {
+      options = options || {}
+
       // Holds the embedded views
       this.content = []
+
+      // set container element for the content
+      this.container = options.container || null
     }
     /**
      * Renders all the content
@@ -18,8 +23,11 @@ define(['underscore', 'views/BaseView'], function (_, BaseView) {
     , render: function () {
       ContainerView.__super__.render.apply(this, arguments)
 
+      // set DOM element for the container
+      var container = this.container ? $(this.container, this.el) : this.$el
+
       _.each(this.content, function (item) {
-        this.$el.append(item.render().el)
+        container.append(item.render().el)
       }, this)
 
       return this

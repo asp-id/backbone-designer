@@ -25,6 +25,10 @@ describe('ContainerView', function () {
     expect(this.containerView.content).toBeDefined()
   })
 
+  it('should have container element', function () {
+    expect(this.containerView.container).toBeDefined()
+  })
+
   it('should have addContent method', function () {
     expect(typeof this.containerView.addContent).toEqual('function')
   })
@@ -45,6 +49,22 @@ describe('ContainerView', function () {
       this.containerView.addContent(view)
       this.containerView.render()
       expect(spy).toHaveBeenCalled()
+    })
+
+    it('should render content in right container', function () {
+      var view = new Backbone.View({
+        className: 'test'
+      })
+
+      this.containerView.template = '<div class="test-container"></div>'
+      this.containerView.initialize({
+        container: '.test-container'
+      })
+
+      this.containerView.addContent(view)
+      this.containerView.render()
+
+      expect($('.test-container', this.containerView.el).find('.test').length).toEqual(1)
     })
   })
 })
