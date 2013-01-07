@@ -6,14 +6,6 @@
         Purpose of the stylesheet follows.
 */
 
-#widgets-container {
-  height: 40%;
-}
-
-#properties-container {
-  height: 60%;
-}
-
 #designer-container #app-container .container {
   width: 700px;
 }
@@ -60,8 +52,4 @@
 
 #widgets-container .panel-element {
   height: 32px;
-}
-
-#properties-container .panel-element .panel-label {
-  width: 46px;
 }
