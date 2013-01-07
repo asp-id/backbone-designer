@@ -110,7 +110,7 @@ textarea[class*="span"],
   background-color: #f5f5f5;
 }
 
-.panel-header .panel-label {
+.panel-section-header .panel-section-label {
   padding-left: 10px;
   color: #555555;
   text-decoration: none;

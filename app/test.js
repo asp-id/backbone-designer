@@ -50,6 +50,7 @@ require(['underscore', 'jquery', 'jasmine-html'], function (_, $, jasmine) {
   specs.push('test/PreviewView')
   specs.push('test/PanelView')
   specs.push('test/ContainerView')
+  specs.push('test/PanelSectionView')
 
   $(function () {
     require(specs, function () {

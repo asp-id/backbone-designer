@@ -22,6 +22,7 @@ define(['underscore', 'views/ContainerView'], function (_, ContainerView) {
      * @param {String} options.background
      */
     , initialize: function (options) {
+      PanelView.__super__.initialize.apply(this, arguments)
       options = options || {}
 
       this.position = options.position || { top: 0, left: 0 }

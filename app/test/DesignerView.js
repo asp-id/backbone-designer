@@ -24,4 +24,12 @@ describe('DesignerView', function () {
   it('should contain widgets panel', function () {
     expect(this.view.widgetsPanel).toBeDefined()
   })
+
+  it('should contain widgets section', function () {
+    expect(this.view.widgetsSection).toBeDefined()
+  })
+
+  it('should contain properties section', function () {
+    expect(this.view.propertiesSection).toBeDefined()
+  })
 })
