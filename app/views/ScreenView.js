@@ -5,7 +5,9 @@
  */
 
 define(['views/ContainerView'], function (ContainerView) {
-  var ScreenView = ContainerView.extend({ })
+  'use strict';
 
-  return ScreenView
-})
+  var ScreenView = ContainerView.extend({ });
+
+  return ScreenView;
+});

@@ -5,31 +5,33 @@
  */
 
 describe('DesignerView', function () {
+  'use strict';
+
   beforeEach(function () {
     var self = this
-      , done = false
+      , done = false;
 
     require(['views/DesignerView'], function (DesignerView) {
-      self.view = new DesignerView()
-      $('#sandbox').html(self.view.render().el)
+      self.view = new DesignerView();
+      $('#sandbox').html(self.view.render().el);
 
-      done = true
-    })
+      done = true;
+    });
 
-    waitsFor(function () { return done })
-  })
+    waitsFor(function () { return done; });
+  });
 
-  afterEach(function () { this.view.remove() })
+  afterEach(function () { this.view.remove(); });
 
   it('should contain widgets panel', function () {
-    expect(this.view.widgetsPanel).toBeDefined()
-  })
+    expect(this.view.widgetsPanel).toBeDefined();
+  });
 
   it('should contain widgets section', function () {
-    expect(this.view.widgetsSection).toBeDefined()
-  })
+    expect(this.view.widgetsSection).toBeDefined();
+  });
 
   it('should contain properties section', function () {
-    expect(this.view.propertiesSection).toBeDefined()
-  })
-})
+    expect(this.view.propertiesSection).toBeDefined();
+  });
+});

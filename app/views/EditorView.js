@@ -5,22 +5,25 @@
  */
 
 define(['views/ScreenView', 'views/PanelView'], function (ScreenView, PanelView) {
+  'use strict';
+
   var EditorView = ScreenView.extend({
-      initialize: function () {
-      EditorView.__super__.initialize.apply(this, arguments)
+    initialize: function () {
+      EditorView.__super__.initialize.apply(this, arguments);
 
       this.projectPanel =  new PanelView({
-          position: { top: 0, left: 0, bottom: 0 }
-        , width: 280
-        , background: 'linear-gradient(to left, #FFFFFF, #F8F8F8)'
-      })
+        position: { top: 0, left: 0, bottom: 0 },
+        width: 280,
+        background: 'linear-gradient(to left, #FFFFFF, #F8F8F8)'
+      });
+
       this.editorPanel = new PanelView({
-          position: { top: 0, left: 286, bottom: 0, right: 0 }
-      })
+        position: { top: 0, left: 286, bottom: 0, right: 0 }
+      });
 
-      this.addContent([this.projectPanel, this.editorPanel])
+      this.addContent([this.projectPanel, this.editorPanel]);
     }
-  })
+  });
 
-  return EditorView
-})
+  return EditorView;
+});

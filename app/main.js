@@ -5,64 +5,64 @@
  */
 
 require.config({
-    paths: {
-      jquery: 'vendor/jquery/jquery-1.8.3'
-    , underscore: 'vendor/underscore/underscore'
-    , backbone: 'vendor/backbone/backbone'
-    , text: 'vendor/require/text'
-  }
-  , shim: {
-      'underscore': { exports: '_' }
-    , 'backbone': {
-        deps: ['underscore', 'jquery']
-      , exports: 'Backbone'
+  paths: {
+    jquery: 'vendor/jquery/jquery-1.8.3',
+    underscore: 'vendor/underscore/underscore',
+    backbone: 'vendor/backbone/backbone',
+    text: 'vendor/require/text'
+  },
+  shim: {
+    'underscore': { exports: '_' },
+    'backbone': {
+      deps: ['underscore', 'jquery'],
+      exports: 'Backbone'
     }
   }
-})
+});
 
 require(['jquery', 'backbone', 'router'], function ($, Backbone, router) {
+  'use strict';
+
   $(function () {
     // Test for pushState support
     var pushState = false
-      , oldPath = location.pathname
+      , oldPath = location.pathname;
 
     if (history.pushState) {
-      pushState = true
+      pushState = true;
 
       // Even if browser supports pushState
       // it does not work for file:// protocol
       try {
-        history.replaceState(null, null, 'test')
+        history.replaceState(null, null, 'test');
       } catch (e) {
-        pushState = false
+        pushState = false;
       }
 
       // restore state after testing
       if (pushState) {
-        history.replaceState(null, null, oldPath)
+        history.replaceState(null, null, oldPath);
       }
     }
 
     // Globally capture clicks. If they are internal
     // route them through Backbone's navigate method.
     $(document).on('click', "a[href^='/']", function (e) {
-      href = $(e.currentTarget).attr('href')
+      var href = $(e.currentTarget).attr('href')
+        , url = href.replace(/^\//, ''); // Remove leading slashes
 
       // Allow shift+click for new tabs, etc.
       if (!e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
-        e.preventDefault()
-
-        // Remove leading slashes
-        url = href.replace(/^\//, '')
+        e.preventDefault();
 
         // Instruct Backbone to trigger routing events
-        router.navigate(url, { trigger: true })
+        router.navigate(url, { trigger: true });
 
-        return false
+        return false;
       }
-    })
+    });
 
     // Start the routing and load the default route
-    Backbone.history.start({ pushState: pushState })
-  })
-})
+    Backbone.history.start({ pushState: pushState });
+  });
+});

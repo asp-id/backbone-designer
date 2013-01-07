@@ -5,21 +5,23 @@
  */
 
 describe('ScreenView', function () {
+  'use strict';
+
   beforeEach(function () {
     var self = this
-      , done = false
+      , done = false;
 
-    this.screenId = 'test-screen'
+    this.screenId = 'test-screen';
 
     require(['views/ScreenView'], function (ScreenView) {
-      self.view = new ScreenView({ id: self.screenId })
-      $('#sandbox').html(self.view.render().el)
+      self.view = new ScreenView({ id: self.screenId });
+      $('#sandbox').html(self.view.render().el);
 
-      done = true
-    })
+      done = true;
+    });
 
-    waitsFor(function () { return done })
-  })
+    waitsFor(function () { return done; });
+  });
 
-  afterEach(function () { this.view.remove() })
-})
+  afterEach(function () { this.view.remove(); });
+});

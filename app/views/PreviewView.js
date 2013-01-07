@@ -5,7 +5,9 @@
  */
 
 define(['views/ScreenView'], function (ScreenView) {
-  var PreviewView = ScreenView.extend({ })
+  'use strict';
 
-  return PreviewView
-})
+  var PreviewView = ScreenView.extend({ });
+
+  return PreviewView;
+});

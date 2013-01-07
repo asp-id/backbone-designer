@@ -5,38 +5,40 @@
  */
 
 describe('BaseView', function () {
+  'use strict';
+
   beforeEach(function () {
     var self = this
-      , done = false
+      , done = false;
 
     require(['views/BaseView'], function (BaseView) {
-      self.view = new BaseView()
-      $('#sandbox').html(self.view.render().el)
+      self.view = new BaseView();
+      $('#sandbox').html(self.view.render().el);
 
-      done = true
-    })
+      done = true;
+    });
 
-    waitsFor(function () { return done })
-  })
+    waitsFor(function () { return done; });
+  });
 
-  afterEach(function () { this.view.remove() })
+  afterEach(function () { this.view.remove(); });
 
   it('should render template if it is set', function () {
-    var html = 'test'
+    var html = 'test';
 
-    this.view.template = html
-    this.view.render()
-    expect(this.view.$el.html()).toEqual(html)
-  })
+    this.view.template = html;
+    this.view.render();
+    expect(this.view.$el.html()).toEqual(html);
+  });
 
   it('should render data', function () {
     var html = '<%= data %>'
-      , data = { data: 'test' }
+      , data = { data: 'test' };
 
-    this.view.template = html
-    this.view.data = data
+    this.view.template = html;
+    this.view.data = data;
 
-    this.view.render()
-    expect(this.view.$el.html()).toEqual(data.data)
-  })
-})
+    this.view.render();
+    expect(this.view.$el.html()).toEqual(data.data);
+  });
+});

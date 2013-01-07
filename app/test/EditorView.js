@@ -5,27 +5,29 @@
  */
 
 describe('EditorView', function () {
+  'use strict';
+
   beforeEach(function () {
     var self = this
-      , done = false
+      , done = false;
 
     require(['views/EditorView'], function (EditorView) {
-      self.view = new EditorView()
-      $('#sandbox').html(self.view.render().el)
+      self.view = new EditorView();
+      $('#sandbox').html(self.view.render().el);
 
-      done = true
-    })
+      done = true;
+    });
 
-    waitsFor(function () { return done })
-  })
+    waitsFor(function () { return done; });
+  });
 
-  afterEach(function () { this.view.remove() })
+  afterEach(function () { this.view.remove(); });
 
   it('should contain project panel', function () {
-    expect(this.view.projectPanel).toBeDefined()
-  })
+    expect(this.view.projectPanel).toBeDefined();
+  });
 
   it('should contain editor panel', function () {
-    expect(this.view.editorPanel).toBeDefined()
-  })
-})
+    expect(this.view.editorPanel).toBeDefined();
+  });
+});

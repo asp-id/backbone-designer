@@ -5,34 +5,35 @@
  */
 
 define([
-    'underscore'
-  , 'views/ContainerView'
-  , 'text!templates/panelSectionView.html'
-], function (_, ContainerView, template) {
+  'views/ContainerView',
+  'text!templates/panelSectionView.html'
+], function (ContainerView, template) {
+  'use strict';
+
   var PanelSectionView = ContainerView.extend({
-      className: 'panel-section'
+    className: 'panel-section',
 
-    , initialize: function (options) {
-      PanelSectionView.__super__.initialize.apply(this, arguments)
-      options = options || {}
+    initialize: function (options) {
+      PanelSectionView.__super__.initialize.call(this, options);
+      options = options || {};
 
-      this.title = options.title || 'default title'
-      this.height = options.height || '100%'
-      this.template = template
+      this.title = options.title || 'default title';
+      this.height = options.height || '100%';
+      this.template = template;
       this.data = {
         title: this.title
-      }
-      this.container = '.panel-section-content'
+      };
+      this.container = '.panel-section-content';
+    },
+
+    render: function () {
+      PanelSectionView.__super__.render.apply(this, arguments);
+
+      this.$el.css('height', this.height);
+
+      return this;
     }
+  });
 
-    , render: function () {
-      PanelSectionView.__super__.render.apply(this, arguments)
-
-      this.$el.css('height', this.height)
-
-      return this
-    }
-  })
-
-  return PanelSectionView
-})
+  return PanelSectionView;
+});

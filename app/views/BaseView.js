@@ -4,17 +4,19 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define(['backbone'], function (Backbone) {
+define(['underscore', 'backbone'], function (_, Backbone) {
+  'use strict';
+
   var BaseView = Backbone.View.extend({
-      render: function () {
+    render: function () {
       if (this.template) {
-        this.data = this.data || {}
-        this.$el.html(_.template(this.template, this.data))
+        this.data = this.data || {};
+        this.$el.html(_.template(this.template, this.data));
       }
 
-      return this
+      return this;
     }
-  })
+  });
 
-  return BaseView
-})
+  return BaseView;
+});

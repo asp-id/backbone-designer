@@ -5,44 +5,46 @@
  */
 
 describe('PanelSectionView', function () {
+  'use strict';
+
   beforeEach(function () {
     var self = this
-      , done = false
+      , done = false;
 
     require(['views/PanelSectionView'], function (PanelSectionView) {
-      self.view = new PanelSectionView()
-      $('#sandbox').html(self.view.render().el)
+      self.view = new PanelSectionView();
+      $('#sandbox').html(self.view.render().el);
 
-      done = true
-    })
+      done = true;
+    });
 
-    waitsFor(function () { return done })
-  })
+    waitsFor(function () { return done; });
+  });
 
-  afterEach(function () { this.view.remove() })
+  afterEach(function () { this.view.remove(); });
 
   it('should have title', function () {
-    expect(this.view.title).toBeDefined()
-  })
+    expect(this.view.title).toBeDefined();
+  });
 
   it('should have height', function () {
-    expect(this.view.height).toBeDefined()
-  })
+    expect(this.view.height).toBeDefined();
+  });
 
   it('should render content in right container', function () {
-    expect(this.view.container).toEqual('.panel-section-content', this.view.el)
-  })
+    expect(this.view.container).toEqual('.panel-section-content', this.view.el);
+  });
 
   it('should have the right className', function () {
-    expect(this.view.$el.hasClass('panel-section')).toBeTruthy()
-  })
+    expect(this.view.$el.hasClass('panel-section')).toBeTruthy();
+  });
 
   it('should render the right title', function () {
-    var title = 'test'
+    var title = 'test';
 
-    this.view.initialize({ title: title })
-    this.view.render()
+    this.view.initialize({ title: title });
+    this.view.render();
 
-    expect($('.panel-section-header .panel-section-label', this.view.el).html()).toEqual(title)
-  })
-})
+    expect($('.panel-section-header .panel-section-label', this.view.el).html()).toEqual(title);
+  });
+});

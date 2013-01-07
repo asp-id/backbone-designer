@@ -5,15 +5,15 @@
  */
 
 ({
-    baseUrl : './'
-  , dir : '../build'
-  , mainConfigFile: 'main.js'
-  , optimize: 'uglify'
-  , modules: [
+  baseUrl : './',
+  dir : '../build',
+  mainConfigFile: 'main.js',
+  optimize: 'uglify',
+  modules: [
     {
-        name: 'main'
-      , exclude: ['jquery', 'underscore', 'backbone', 'text']
+      name: 'main',
+      exclude: ['jquery', 'underscore', 'backbone', 'text']
     }
-  ]
-  , fileExclusionRegExp: /^(\.)|(test)|(app\.build\.js)|(test\.js)|(test\.html)|(jasmine)/
-})
+  ],
+  fileExclusionRegExp: /^(\.)|(test)|(app\.build\.js)|(test\.js)|(test\.html)|(jasmine)/
+});

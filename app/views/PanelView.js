@@ -5,8 +5,10 @@
  */
 
 define(['underscore', 'views/ContainerView'], function (_, ContainerView) {
+  'use strict';
+
   var PanelView = ContainerView.extend({
-      className: 'panel'
+    className: 'panel',
 
     /**
      * Panel view initializer
@@ -21,27 +23,27 @@ define(['underscore', 'views/ContainerView'], function (_, ContainerView) {
      * @param {Number|String} options.height
      * @param {String} options.background
      */
-    , initialize: function (options) {
-      PanelView.__super__.initialize.apply(this, arguments)
-      options = options || {}
+    initialize: function (options) {
+      PanelView.__super__.initialize.call(this, options);
+      options = options || {};
 
-      this.position = options.position || { top: 0, left: 0 }
-      this.width = options.width || 'auto'
-      this.height = options.height || 'auto'
-      this.background = options.background || null
-    }
+      this.position = options.position || { top: 0, left: 0 };
+      this.width = options.width || 'auto';
+      this.height = options.height || 'auto';
+      this.background = options.background || null;
+    },
 
-    , render: function () {
+    render: function () {
       this.$el.css(_.extend({
-          width: this.width
-        , height: this.height
-        , 'background-image': this.background
-        , position: 'absolute' // position should be absolute to work without css file
-      }, this.position))
+        width: this.width,
+        height: this.height,
+        'background-image': this.background,
+        position: 'absolute' // position should be absolute to work without css file
+      }, this.position));
 
-      return PanelView.__super__.render.apply(this, arguments)
+      return PanelView.__super__.render.apply(this, arguments);
     }
-  })
+  });
 
-  return PanelView
-})
+  return PanelView;
+});

@@ -5,19 +5,21 @@
  */
 
 describe('PreviewView', function () {
+  'use strict';
+
   beforeEach(function () {
     var self = this
-      , done = false
+      , done = false;
 
     require(['views/PreviewView'], function (PreviewView) {
-      self.view = new PreviewView()
-      $('#sandbox').html(self.view.render().el)
+      self.view = new PreviewView();
+      $('#sandbox').html(self.view.render().el);
 
-      done = true
-    })
+      done = true;
+    });
 
-    waitsFor(function () { return done })
-  })
+    waitsFor(function () { return done; });
+  });
 
-  afterEach(function () { this.view.remove() })
-})
+  afterEach(function () { this.view.remove(); });
+});

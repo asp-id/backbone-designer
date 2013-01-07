@@ -5,43 +5,45 @@
  */
 
 describe('NavigationView', function () {
+  'use strict';
+
   beforeEach(function () {
     var self = this
-      , done = false
+      , done = false;
 
-    require(['views/NavigationView', 'router'], function (NavigationView, router) {
-      self.router = router
-      self.navigationMenu = router.navigationMenu
+    require(['router'], function (router) {
+      self.router = router;
+      self.navigationMenu = router.navigationMenu;
 
       // remove #top-menu created by router from DOM
-      $('body > #top-menu').remove()
-      $('#sandbox').html(self.navigationMenu.render().el)
+      $('body > #top-menu').remove();
+      $('#sandbox').html(self.navigationMenu.render().el);
 
-      Backbone.history.start({ silent: true })
+      Backbone.history.start({ silent: true });
 
       // change hash to be sure that hashChange is triggered when other navigate calls are made
-      self.router.navigate('foo')
+      self.router.navigate('foo');
 
-      done = true
-    })
+      done = true;
+    });
 
-    waitsFor(function () { return done })
-  })
+    waitsFor(function () { return done; });
+  });
 
   afterEach(function () {
-    this.navigationMenu.remove()
-    Backbone.history.stop()
-  })
+    this.navigationMenu.remove();
+    Backbone.history.stop();
+  });
 
   it('should activate menu entry on route match event', function () {
-    this.router.navigate('', { trigger: true })
-    expect(this.navigationMenu.$el.find('.designer-link').hasClass('active')).toBeTruthy()
-  })
+    this.router.navigate('', { trigger: true });
+    expect(this.navigationMenu.$el.find('.designer-link').hasClass('active')).toBeTruthy();
+  });
 
   it('should have only one active item', function () {
-    this.router.navigate('editor', { trigger: true })
-    this.router.navigate('preview', { trigger: true })
-    this.router.navigate('', { trigger: true })
-    expect(this.navigationMenu.$el.find('.active').length).toEqual(1)
-  })
-})
+    this.router.navigate('editor', { trigger: true });
+    this.router.navigate('preview', { trigger: true });
+    this.router.navigate('', { trigger: true });
+    expect(this.navigationMenu.$el.find('.active').length).toEqual(1);
+  });
+});
