@@ -28,4 +28,15 @@ describe('BaseView', function () {
     this.view.render()
     expect(this.view.$el.html()).toEqual(html)
   })
+
+  it('should render data', function () {
+    var html = '<%= data %>'
+      , data = { data: 'test' }
+
+    this.view.template = html
+    this.view.data = data
+
+    this.view.render()
+    expect(this.view.$el.html()).toEqual(data.data)
+  })
 })

@@ -8,7 +8,8 @@ define(['backbone'], function (Backbone) {
   var BaseView = Backbone.View.extend({
       render: function () {
       if (this.template) {
-        this.$el.html(this.template)
+        this.data = this.data || {}
+        this.$el.html(_.template(this.template, this.data))
       }
 
       return this
