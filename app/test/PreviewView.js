@@ -10,8 +10,8 @@ describe('PreviewView', function () {
       , done = false
 
     require(['views/PreviewView'], function (PreviewView) {
-      self.previewView = new PreviewView()
-      $('#sandbox').html(self.previewView.render().el)
+      self.view = new PreviewView()
+      $('#sandbox').html(self.view.render().el)
 
       done = true
     })
@@ -19,5 +19,5 @@ describe('PreviewView', function () {
     waitsFor(function () { return done })
   })
 
-  afterEach(function () { this.previewView.remove() })
+  afterEach(function () { this.view.remove() })
 })

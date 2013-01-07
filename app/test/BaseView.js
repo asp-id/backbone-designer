@@ -10,8 +10,8 @@ describe('BaseView', function () {
       , done = false
 
     require(['views/BaseView'], function (BaseView) {
-      self.baseView = new BaseView()
-      $('#sandbox').html(self.baseView.render().el)
+      self.view = new BaseView()
+      $('#sandbox').html(self.view.render().el)
 
       done = true
     })
@@ -19,13 +19,13 @@ describe('BaseView', function () {
     waitsFor(function () { return done })
   })
 
-  afterEach(function () { this.baseView.remove() })
+  afterEach(function () { this.view.remove() })
 
   it('should render template if it is set', function () {
     var html = 'test'
 
-    this.baseView.template = html
-    this.baseView.render()
-    expect(this.baseView.$el.html()).toEqual(html)
+    this.view.template = html
+    this.view.render()
+    expect(this.view.$el.html()).toEqual(html)
   })
 })

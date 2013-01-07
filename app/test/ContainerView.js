@@ -10,8 +10,8 @@ describe('ContainerView', function () {
       , done = false
 
     require(['views/ContainerView'], function (ContainerView) {
-      self.containerView = new ContainerView()
-      $('#sandbox').html(self.containerView.render().el)
+      self.view = new ContainerView()
+      $('#sandbox').html(self.view.render().el)
 
       done = true
     })
@@ -19,25 +19,25 @@ describe('ContainerView', function () {
     waitsFor(function () { return done })
   })
 
-  afterEach(function () { this.containerView.remove() })
+  afterEach(function () { this.view.remove() })
 
   it('should have content', function () {
-    expect(this.containerView.content).toBeDefined()
+    expect(this.view.content).toBeDefined()
   })
 
   it('should have container element', function () {
-    expect(this.containerView.container).toBeDefined()
+    expect(this.view.container).toBeDefined()
   })
 
   it('should have addContent method', function () {
-    expect(typeof this.containerView.addContent).toEqual('function')
+    expect(typeof this.view.addContent).toEqual('function')
   })
 
   describe('addContent', function () {
     it('should add content', function () {
       var view = new Backbone.View()
-      this.containerView.addContent(view)
-      expect(this.containerView.content).toContain(view)
+      this.view.addContent(view)
+      expect(this.view.content).toContain(view)
     })
   })
 
@@ -46,8 +46,8 @@ describe('ContainerView', function () {
       var view = new Backbone.View()
         , spy = spyOn(view, 'render').andCallThrough()
 
-      this.containerView.addContent(view)
-      this.containerView.render()
+      this.view.addContent(view)
+      this.view.render()
       expect(spy).toHaveBeenCalled()
     })
 
@@ -56,15 +56,15 @@ describe('ContainerView', function () {
         className: 'test'
       })
 
-      this.containerView.template = '<div class="test-container"></div>'
-      this.containerView.initialize({
+      this.view.template = '<div class="test-container"></div>'
+      this.view.initialize({
         container: '.test-container'
       })
 
-      this.containerView.addContent(view)
-      this.containerView.render()
+      this.view.addContent(view)
+      this.view.render()
 
-      expect($('.test-container', this.containerView.el).find('.test').length).toEqual(1)
+      expect($('.test-container', this.view.el).find('.test').length).toEqual(1)
     })
   })
 })

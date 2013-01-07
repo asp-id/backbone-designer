@@ -10,8 +10,8 @@ describe('EditorView', function () {
       , done = false
 
     require(['views/EditorView'], function (EditorView) {
-      self.editorView = new EditorView()
-      $('#sandbox').html(self.editorView.render().el)
+      self.view = new EditorView()
+      $('#sandbox').html(self.view.render().el)
 
       done = true
     })
@@ -19,13 +19,13 @@ describe('EditorView', function () {
     waitsFor(function () { return done })
   })
 
-  afterEach(function () { this.editorView.remove() })
+  afterEach(function () { this.view.remove() })
 
   it('should contain project panel', function () {
-    expect(this.editorView.projectPanel).toBeDefined()
+    expect(this.view.projectPanel).toBeDefined()
   })
 
   it('should contain editor panel', function () {
-    expect(this.editorView.editorPanel).toBeDefined()
+    expect(this.view.editorPanel).toBeDefined()
   })
 })

@@ -12,8 +12,8 @@ describe('ScreenView', function () {
     this.screenId = 'test-screen'
 
     require(['views/ScreenView'], function (ScreenView) {
-      self.screenView = new ScreenView({ id: self.screenId })
-      $('#sandbox').html(self.screenView.render().el)
+      self.view = new ScreenView({ id: self.screenId })
+      $('#sandbox').html(self.view.render().el)
 
       done = true
     })
@@ -21,5 +21,5 @@ describe('ScreenView', function () {
     waitsFor(function () { return done })
   })
 
-  afterEach(function () { this.screenView.remove() })
+  afterEach(function () { this.view.remove() })
 })

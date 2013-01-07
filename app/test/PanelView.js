@@ -10,8 +10,8 @@ describe('PanelView', function () {
       , done = false
 
     require(['views/PanelView'], function (PanelView) {
-      self.panelView = new PanelView()
-      $('#sandbox').html(self.panelView.render().el)
+      self.view = new PanelView()
+      $('#sandbox').html(self.view.render().el)
 
       done = true
     })
@@ -19,49 +19,49 @@ describe('PanelView', function () {
     waitsFor(function () { return done })
   })
 
-  afterEach(function () { this.panelView.remove() })
+  afterEach(function () { this.view.remove() })
 
   it('should have position', function () {
-    expect(this.panelView.position).toBeDefined()
+    expect(this.view.position).toBeDefined()
   })
 
   it('should have width', function () {
-    expect(this.panelView.width).toBeDefined()
+    expect(this.view.width).toBeDefined()
   })
 
   it('should have height', function () {
-    expect(this.panelView.height).toBeDefined()
+    expect(this.view.height).toBeDefined()
   })
 
   it('should have background', function () {
-    expect(this.panelView.background).toBeDefined()
+    expect(this.view.background).toBeDefined()
   })
 
   it('should render the right position', function () {
     var position = { top: 10, left: 10 }
-    this.panelView.initialize({ position: position })
-    this.panelView.render()
-    expect(_.isEqual(this.panelView.$el.position(), position)).toBeTruthy()
+    this.view.initialize({ position: position })
+    this.view.render()
+    expect(_.isEqual(this.view.$el.position(), position)).toBeTruthy()
   })
 
   it('should render the right width', function () {
     var width = 100
-    this.panelView.initialize({ width: width })
-    this.panelView.render()
-    expect(this.panelView.$el.width()).toEqual(width)
+    this.view.initialize({ width: width })
+    this.view.render()
+    expect(this.view.$el.width()).toEqual(width)
   })
 
   it('should render the right height', function () {
     var height = 100
-    this.panelView.initialize({ height: height })
-    this.panelView.render()
-    expect(this.panelView.$el.height()).toEqual(height)
+    this.view.initialize({ height: height })
+    this.view.render()
+    expect(this.view.$el.height()).toEqual(height)
   })
 
   it('should render the right background', function () {
     var background = 'linear-gradient(to right, rgb(255, 255, 255), rgb(248, 248, 248))'
-    this.panelView.initialize({ background: background })
-    this.panelView.render()
-    expect(this.panelView.$el.css('background-image')).toEqual(background)
+    this.view.initialize({ background: background })
+    this.view.render()
+    expect(this.view.$el.css('background-image')).toEqual(background)
   })
 })

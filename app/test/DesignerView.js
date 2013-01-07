@@ -10,8 +10,8 @@ describe('DesignerView', function () {
       , done = false
 
     require(['views/DesignerView'], function (DesignerView) {
-      self.designerView = new DesignerView()
-      $('#sandbox').html(self.designerView.render().el)
+      self.view = new DesignerView()
+      $('#sandbox').html(self.view.render().el)
 
       done = true
     })
@@ -19,9 +19,9 @@ describe('DesignerView', function () {
     waitsFor(function () { return done })
   })
 
-  afterEach(function () { this.designerView.remove() })
+  afterEach(function () { this.view.remove() })
 
   it('should contain widgets panel', function () {
-    expect(this.designerView.widgetsPanel).toBeDefined()
+    expect(this.view.widgetsPanel).toBeDefined()
   })
 })
