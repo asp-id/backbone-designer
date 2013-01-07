@@ -4,8 +4,8 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define(['backbone', 'text!templates/navigationView.html'], function (Backbone, template) {
-  var NavigationView = Backbone.View.extend({
+define(['views/BaseView', 'text!templates/navigationView.html'], function (BaseView, template) {
+  var NavigationView = BaseView.extend({
       id: 'top-menu'
 
     , className: 'toolbar'
@@ -26,12 +26,6 @@ define(['backbone', 'text!templates/navigationView.html'], function (Backbone, t
 
       // set current active item to null
       this.activeItem = null
-    }
-
-    , render: function () {
-      this.$el.html(this.template)
-
-      return this
     }
 
     /**

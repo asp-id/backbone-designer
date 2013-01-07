@@ -4,8 +4,8 @@
  * @author David Klassen <f0rk.tt@gmail.com> (c) 2012
  */
 
-define(['underscore', 'backbone'], function (_, Backbone) {
-  var ContainerView = Backbone.View.extend({
+define(['underscore', 'views/BaseView'], function (_, BaseView) {
+  var ContainerView = BaseView.extend({
       initialize: function () {
       // Holds the embedded views
       this.content = []
@@ -16,6 +16,8 @@ define(['underscore', 'backbone'], function (_, Backbone) {
      * @return {ContainerView}
      */
     , render: function () {
+      ContainerView.__super__.render.apply(this, arguments)
+
       _.each(this.content, function (item) {
         this.$el.append(item.render().el)
       }, this)
