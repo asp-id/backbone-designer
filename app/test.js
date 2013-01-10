@@ -53,6 +53,8 @@ require(['underscore', 'jquery', 'jasmine-html'], function (_, $, jasmine) {
   specs.push('test/views/PanelView');
   specs.push('test/views/ContainerView');
   specs.push('test/views/PanelSectionView');
+  specs.push('test/models/BaseModel');
+  specs.push('test/models/File');
 
   $(function () {
     require(specs, function () {
