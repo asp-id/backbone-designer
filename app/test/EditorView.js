@@ -30,4 +30,12 @@ describe('EditorView', function () {
   it('should contain editor panel', function () {
     expect(this.view.editorPanel).toBeDefined();
   });
+
+  it('should contain project section', function () {
+    expect(this.view.projectSection).toBeDefined();
+  });
+
+  it('should contain editor section', function () {
+    expect(this.view.editorSection).toBeDefined();
+  });
 });
