@@ -44,15 +44,15 @@ require(['underscore', 'jquery', 'jasmine-html'], function (_, $, jasmine) {
 
   // load the specs we are going to run
   specs.push('test/router');
-  specs.push('test/BaseView');
-  specs.push('test/NavigationView');
-  specs.push('test/ScreenView');
-  specs.push('test/DesignerView');
-  specs.push('test/EditorView');
-  specs.push('test/PreviewView');
-  specs.push('test/PanelView');
-  specs.push('test/ContainerView');
-  specs.push('test/PanelSectionView');
+  specs.push('test/views/BaseView');
+  specs.push('test/views/NavigationView');
+  specs.push('test/views/ScreenView');
+  specs.push('test/views/DesignerView');
+  specs.push('test/views/EditorView');
+  specs.push('test/views/PreviewView');
+  specs.push('test/views/PanelView');
+  specs.push('test/views/ContainerView');
+  specs.push('test/views/PanelSectionView');
 
   $(function () {
     require(specs, function () {
