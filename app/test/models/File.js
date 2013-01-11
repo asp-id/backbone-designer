@@ -90,5 +90,43 @@ describe('File', function () {
 
       expect(instance.get('content')).toEqual(content);
     });
+
+    describe('isDir() method', function () {
+      it('should be defined', function () {
+        expect(this.instance.isDir).toBeDefined();
+        expect(typeof this.instance.isDir).toEqual('function');
+      });
+
+      it('should return true if file is a directory', function () {
+        expect(this.instance.isDir()).toBeTruthy();
+      });
+
+      it('should return false if file is not a directory', function () {
+        var instance = new File({
+          name: name,
+          parent: this.instance
+        });
+
+        expect(instance.isDir()).toBeFalsy();
+      });
+    });
+
+    describe('getPath() method', function () {
+      it('should be defined', function () {
+        expect(this.instance.getPath).toBeDefined();
+        expect(typeof this.instance.getPath).toEqual('function');
+      });
+
+      it('should return the right path', function () {
+        var newFileName = 'newFile'
+          , newFile = new File({
+            name: newFileName,
+            parent: this.instance
+          });
+
+        expect(this.instance.getPath()).toEqual('/');
+        expect(newFile.getPath()).toEqual('/' + name);
+      });
+    });
   });
 });

@@ -7,9 +7,16 @@
 define(['underscore', 'models/BaseModel'], function (_, BaseModel) {
   'use strict';
 
+  /**
+   * File type constants
+   */
+  var DIRECTORY = 0
+    , TEXT = 1;
+
   var File = BaseModel.extend({
     defaults: {
-      parent: null
+      parent: null,
+      type: TEXT
     },
 
     initialize: function (attrs) {
@@ -31,21 +38,48 @@ define(['underscore', 'models/BaseModel'], function (_, BaseModel) {
         return 'parent should be instance of File';
       }
 
-      if (attrs.type === File.TEXT && _.isEmpty(attrs.parent)) {
+      if (attrs.type === TEXT && _.isEmpty(attrs.parent)) {
         return 'parent should not be empty';
       }
 
-      if (attrs.type === File.TEXT && attrs.parent.get('type') !== File.DIRECTORY) {
+      if (attrs.type === TEXT && attrs.parent.get('type') !== DIRECTORY) {
         return 'parent should be directory';
       }
+    },
+
+    isDir: function () {
+      return this.get('type') === DIRECTORY;
+    },
+
+    /**
+     *
+     * @return {String} File path
+     */
+    getPath: function () {
+      var path
+        , parent
+        , node = this;
+
+      // builds file path
+      while (node.get('parent') !== null) {
+        parent = node.get('parent');
+
+        path = '/' + [parent.get('name'), path].join('/');
+        node = parent;
+      }
+
+      // trim trailing slash
+      path = path ? path.slice(0, -1) : '/';
+
+      return path;
     }
   });
 
   /**
-   * File type constants
+   * Export file type constants
    */
-  File.DIRECTORY = 0;
-  File.TEXT = 1;
+  File.DIRECTORY = DIRECTORY;
+  File.TEXT = TEXT;
 
   return File;
 });
